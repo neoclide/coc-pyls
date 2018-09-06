@@ -9,7 +9,6 @@ export async function activate(context: ExtensionContext): Promise<void> {
   const command = config.commandPath || 'pyls'
   try {
     which.sync(command)
-    this.enable = true
   } catch (e) {
     let items = [
       'Install python-language-server with pip',

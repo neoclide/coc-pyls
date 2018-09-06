@@ -4,6 +4,7 @@
     "outDir": "lib",
     "target": "es2015",
     "module": "commonjs",
+    "noImplicitThis": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "lib": ["es2018"],
