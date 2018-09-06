@@ -3,7 +3,7 @@ import { ExtensionContext, LanguageClient, ServerOptions, workspace, services, L
 
 export async function activate(context: ExtensionContext): Promise<void> {
   let { subscriptions } = context
-  const config = workspace.getConfiguration().get('pyls') as any
+  const config = workspace.getConfiguration().get('pyls', {}) as any
   const enable = config.enable
   if (enable === false) return
   const command = config.commandPath || 'pyls'
@@ -37,7 +37,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
       configurationSection: 'pyls'
     },
     outputChannelName: 'pyls',
-    initializationOptions: config.initializationOptions
+    initializationOptions: config.initializationOptions || {}
   }
 
   let client = new LanguageClient('pyls', 'Python language server', serverOptions, clientOptions)
