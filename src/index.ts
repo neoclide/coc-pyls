@@ -1,5 +1,5 @@
 import which from 'which'
-import { ExtensionContext, LanguageClient, ServerOptions, workspace, services, LanguageClientOptions } from 'coc.nvim'
+import { ExtensionContext, LanguageClient, ServerOptions, workspace, services, LanguageClientOptions, RevealOutputChannelOn } from 'coc.nvim'
 
 export async function activate(context: ExtensionContext): Promise<void> {
   let { subscriptions } = context
@@ -37,6 +37,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
       configurationSection: 'pyls'
     },
     outputChannelName: 'pyls',
+    revealOutputChannelOn: RevealOutputChannelOn.Never,
     initializationOptions: config.initializationOptions || {}
   }
 
