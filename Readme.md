@@ -3,7 +3,9 @@
 Python language server extension using [python-language-server](https://github.com/palantir/python-language-server)
 for [coc.nvim](https://github.com/neoclide/coc.nvim).
 
-**Deprecated pyls not maintained**
+**Deprecated, this extension would not add any new features.**
+
+Use [coc-python](https://github.com/neoclide/coc-python) instead.
 
 ## Install
 
